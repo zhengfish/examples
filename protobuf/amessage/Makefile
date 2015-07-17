@@ -21,7 +21,7 @@ SRCS_2 += amessage_deserialize.c \
 OBJS_2 = $(SRCS_2:.c=.o)
 APP_2 = amessage_deserialize
 
-all: proto $(APP_1) $(APP_2)
+all: $(APP_1) $(APP_2)
 
 .SUFFIXES: .c
 .PHONY: all proto
