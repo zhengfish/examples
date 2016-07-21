@@ -4,11 +4,11 @@
  * @brief a simple message queue.
  *        it is thread-safe and concurrency supported.
  *
- * @author zhengfish<zhengfish@gmail.com>
+ * @author zhengfish<zhengfish@mail.com>
  *
  * @date 2016-07-18 12:22:39 Mon/29
  *
- * @reference
+ * @reference https://github.com/juanchopanza/cppblog.git
  *
  * @bug No known bugs.
  *
@@ -67,7 +67,7 @@ public:
         return queue_.size();
     }
 
-    bool try_pop ( T& item )
+    bool try_pop ( T &item )
     {
         std::unique_lock<std::mutex> mlock ( mutex_ );
 
@@ -94,8 +94,8 @@ public:
     }
 
     m_queue() = default;
-    m_queue ( const m_queue& ) = delete;              // disable copying
-    m_queue& operator= ( const m_queue& ) = delete;   // disable assignment
+    m_queue ( const m_queue & ) = delete;                // disable copying
+    m_queue & operator= ( const m_queue & ) = delete;    // disable assignment
 
 private:
     std::queue<T> queue_;
