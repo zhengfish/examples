@@ -1,4 +1,5 @@
-# Makefile
+# @file Makefile
+# @date 
 
 E_RED = \e[1;31m
 E_GREEN = \e[1;32m
