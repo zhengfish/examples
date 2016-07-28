@@ -20,7 +20,7 @@
 
 void producer ( m_queue<int>& q, unsigned int id )
 {
-    for ( int i = 0; i < 100; ++i ) {
+    for ( int i = 0; i < 1000000; ++i ) {
         std::cout << "producer " << id  << " push " << i << "\n";
         q.push ( i );
     }
@@ -28,8 +28,8 @@ void producer ( m_queue<int>& q, unsigned int id )
 
 void consumer ( m_queue<int>& q, unsigned int id )
 {
-    for ( int i = 0; i < 100; ++i ) {
-        auto item = q.pop();
+    for ( int i = 0; i < 1000000; ++i ) {
+        auto item = q.wait_and_pop();
         std::cout << "consumer " << id << " pop " << item << "\n";
     }
 }
